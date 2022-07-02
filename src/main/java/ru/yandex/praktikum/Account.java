@@ -13,6 +13,8 @@ public class Account {
              Этот метод должен проверять, что сохранённая через конструктор строка соответствует требованиям.
              Если строка удовлетворяет условиям, метод возвращает true, иначе — false.
          */
+        if (name == null) { return false; }
+
         if (name.length() < 3 || name.length() > 19) { return false; }
 
         int spaceNum = 0;

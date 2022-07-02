@@ -22,6 +22,8 @@ public class AccountTest {
     @Parameterized.Parameters(name = "name=\"{0}\" isValid={1}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
+                // null
+                {null, false},
                 // < нижней граниы
                 {"", false},
                 {"SD", false},
