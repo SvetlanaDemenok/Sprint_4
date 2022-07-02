@@ -1,5 +1,7 @@
 package ru.yandex.praktikum;
 
+import java.util.regex.Pattern;
+
 public class Account {
 
     private final String name;
@@ -17,15 +19,7 @@ public class Account {
 
         if (name.length() < 3 || name.length() > 19) { return false; }
 
-        int spaceNum = 0;
-        for (char ch: name.toCharArray()) {
-            if (ch == ' ') { spaceNum++; }
-        }
-        if (spaceNum != 1) { return false; }
-
-        if (name.startsWith(" ") || name.endsWith(" ")) { return false; }
-
-        return true;
+        return Pattern.compile("^\\w+ \\w+$").matcher(name).matches();
     }
 
 }
